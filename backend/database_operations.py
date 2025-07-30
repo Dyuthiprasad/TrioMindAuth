@@ -22,3 +22,14 @@ def insert_user_feedback(upload_id, user_rating, user_comment=None, agreed_with_
         "agreed_with_ai": agreed_with_ai,
         "timestamp": datetime.utcnow()
     }).inserted_id
+def insert_ai_feedback(upload_id, modality, ai_verdict, confidence, explanation, likely_model=None):
+    from datetime import datetime
+    return db.ai_feedback.insert_one({
+        "upload_id": upload_id,
+        "modality": modality,
+        "ai_verdict": ai_verdict,
+        "confidence": confidence,
+        "explanation": explanation,
+        "likely_model": likely_model,
+        "timestamp": datetime.utcnow()
+    }).inserted_id

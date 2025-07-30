@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Background zoom animation (used in Imagine, EngineeringSection, ModernizeSection, ManageSection) */
+@keyframes bg-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bg-zoom {
+  animation: bg-zoom 10s ease-in-out infinite;
+}
+
+/* Blue overlay pulse animation (used in Imagine) */
+@keyframes overlay-pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-overlay-pulse {
+  animation: overlay-pulse 8s ease-in-out infinite;
+}
+
+/* Orange overlay pulse animation (used in EngineeringSection) */
+@keyframes overlay-pulse-orange {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-overlay-pulse-orange {
+  animation: overlay-pulse-orange 8s ease-in-out infinite;
+}
+
+/* Green overlay pulse animation (used in ModernizeSection) */
+@keyframes overlay-pulse-green {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-overlay-pulse-green {
+  animation: overlay-pulse-green 8s ease-in-out infinite;
+}
+
+/* Purple overlay pulse animation (used in ManageSection) */
+@keyframes overlay-pulse-purple {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-overlay-pulse-purple {
+  animation: overlay-pulse-purple 8s ease-in-out infinite;
+}
+
+/* Background pulse animation for blue background (used in InnovationSection) */
+@keyframes bg-pulse-blue {
+  0%, 100% {
+    background-color: #1e3a8a; /* Matches bg-blue-900 */
+  }
+  50% {
+    background-color: #1e40af; /* Slightly lighter blue */
+  }
+}
+
+.animate-bg-pulse-blue {
+  animation: bg-pulse-blue 8s ease-in-out infinite;
+}
+
+/* Title/subtitle entrance animation (used in InnovationSection, Imagine, EngineeringSection, ModernizeSection, ManageSection) */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-in-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+/* Title hover animation (used in InnovationSection, can be applied to other sections) */
+@keyframes title-hover {
+  0%, 100% {
+    transform: scale(1);
+    color: #ffffff; /* Default white */
+  }
+  50% {
+    transform: scale(1.05);
+    color: #dbeafe; /* Lighter blue-white from blue-100 for glow effect */
+  }
+}
+
+.animate-title-hover {
+  animation: title-hover 0.4s ease-in-out;
+}

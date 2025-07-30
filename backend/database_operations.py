@@ -13,3 +13,12 @@ def insert_result(upload_id, trust_score, verdict, explanation, verified_source=
         "modalities_used": modalities_used or [],
         "timestamp": datetime.utcnow()
     }).inserted_id
+def insert_user_feedback(upload_id, user_rating, user_comment=None, agreed_with_ai=None):
+    from datetime import datetime
+    return db.user_feedback.insert_one({
+        "upload_id": upload_id,
+        "user_rating": user_rating,
+        "user_comment": user_comment,
+        "agreed_with_ai": agreed_with_ai,
+        "timestamp": datetime.utcnow()
+    }).inserted_id

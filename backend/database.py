@@ -6,10 +6,10 @@ import os
 load_dotenv()
 
 # Read Mongo URI from environment
-MONGO_URI = os.getenv("mongodb+srv://14chitrashree10d:hacksky@triomind%23333@cluster0.6strltm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_URI = os.getenv("MONGO_URI")
 
 # Connect to MongoDB
-client = MongoClient(mongodb+srv://14chitrashree10d:hacksky@triomind%23333@cluster0.6strltm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0)
+client = MongoClient(MONGO_URI)
 
 # Access database (you can rename this)
 db = client["triomind_db"]
